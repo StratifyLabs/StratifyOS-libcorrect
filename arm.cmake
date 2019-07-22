@@ -35,6 +35,9 @@ set(SOS_SOURCELIST
 	${REPO_DIR}/include/correct/util/error-sim-shim.h
 	${REPO_DIR}/include/correct/util/error-sim-sse.h
 	${REPO_DIR}/include/correct/util/error-sim.h
+
+	${CMAKE_SOURCE_DIR}/correct_api.h
+	${CMAKE_SOURCE_DIR}/correct_api.c
 )
 
 
@@ -54,4 +57,5 @@ set(SOS_BUILD_FLAGS -mlong-calls)
 #include(${SOS_TOOLCHAIN_CMAKE_PATH}/sos-lib-std.cmake)
 
 install(DIRECTORY ${REPO_DIR}/include/ DESTINATION include)
+install(FILES ${CMAKE_SOURCE_DIR}/correct_api.h DESTINATION include/correct/)
 
