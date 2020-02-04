@@ -4,6 +4,10 @@
 #include <mcu/types.h>
 #include "correct.h"
 
+#if defined __cplusplus
+extern "C" {
+#endif
+
 typedef struct {
 	int (*create)(void ** context,
 					  u16 primitive_polynomial,
@@ -35,6 +39,10 @@ extern const correct_api_t correct_api;
 enum {
 	CORRECT_API_REQUEST = MCU_API_REQUEST_CODE('f','e','c','c')
 };
+#endif
+
+#if defined __cplusplus
+}
 #endif
 
 
